@@ -10,8 +10,10 @@ function ifNotExists() {
         echo "$FILENAME already exists"; 
     else
         #link file here
+        echo "Creating symbolic link for $FILENAME"
         ln -s $(pwd)/$FILENAME $FILEDEST;
     fi
 }
 
 ifNotExists .gitconfig ~/.gitconfig
+ifNotExists init.vim ~/.config/nvim/init.vim
