@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #create directories if not exists
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/
 
 function ifNotExists() {
     FILENAME=$1;
@@ -18,3 +18,4 @@ function ifNotExists() {
 ifNotExists .gitconfig ~/.gitconfig
 ifNotExists init.vim ~/.config/nvim/init.vim
 ifNotExists .zshrc ~/.zshrc
+ifNotExists UltiSnips-nvim ~/.config/nvim/UltiSnips
