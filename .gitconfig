@@ -1,0 +1,22 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+
+name = Alexander Nortung
+email = alex_nortung@live.dk 
+[alias]
+    st = status
+    co = checkout
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	hale = pull
+	puff = push
+	hent = fetch
+	skyd = branch
+	forgren = branch
+	fastlag = commit
+	flet = merge
+	gem = stash
+	klandre = blame
+	marker = tag
+	klon = clone
