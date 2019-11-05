@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gitte="git"
 alias open="Thunar"
 alias ssh='TERM=xterm-color ssh'
 alias lah="ls -lah"
