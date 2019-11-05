@@ -17,3 +17,4 @@ function ifNotExists() {
 
 ifNotExists .gitconfig ~/.gitconfig
 ifNotExists init.vim ~/.config/nvim/init.vim
+ifNotExists .zshrc ~/.zshrc
