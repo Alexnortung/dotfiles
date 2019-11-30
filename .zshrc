@@ -102,19 +102,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export GEM_HOME="/home/alexander/.gem/ruby/2.6.0"
+export PATH="$GEM_HOME/bin:$PATH"
+
 alias gitte="git"
 alias open="Thunar"
 alias ssh='TERM=xterm-color ssh'
 alias lah="ls -lah"
 alias latexwatcher="while inotifywait -e modify,move_self,close_write ./*.tex; do latexmk -pdf; done"
+alias æs='ls'
 
 function mkdiro() {
-    mkdir $1;
+    mkdir -p $1;
     cd $1;
 }
 
 export PATH="/usr/local/sbin:$PATH"
-export EDITOR=vim
+export EDITOR=nvim
 #export PYTHONPATH="/usr/lib/python2.7/site-packages"
 
 
