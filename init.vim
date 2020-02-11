@@ -80,7 +80,7 @@ Plug 'othree/es.next.syntax.vim'
 "snippets
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsExpandTrigger = '<c-e>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
@@ -93,15 +93,23 @@ Plug 'editorconfig/editorconfig-vim'
 " F# language server
 "Plug 'fsprojects/fsharp-language-server', {'do': 'npm install && dotnet build -c Release'}
 
+" Omnisharp for completion for C#
+Plug 'OmniSharp/omnisharp-vim'
+" Use the stdio version of OmniSharp-roslyn:
+let g:OmniSharp_server_stdio = 1
+
+" You complete me auto completion
+Plug 'ycm-core/YouCompleteMe' ", { 'do': 'python install.py --rust-completer --cs-completer' }
+
 " Deoplete auto completion
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 " auto completion
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
