@@ -21,3 +21,5 @@ email = alex_nortung@live.dk
 	marker = tag
 	klon = clone
 	tilfoj = add
+[pull]
+	rebase = false

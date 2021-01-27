@@ -8,7 +8,7 @@ export ZSH="/home/alexander/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="simple"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,13 +110,40 @@ kitty + complete setup zsh | source /dev/stdin
 
 export GEM_HOME="/home/alexander/.gem/ruby/2.6.0"
 export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 alias gitte="git"
-alias open="Thunar"
+alias please="sudo"
 alias ssh='TERM=xterm-color ssh'
 alias lah="ls -lah"
 alias latexwatcher="while inotifywait -e modify,move_self,close_write ./*.tex; do latexmk -pdf; done"
 alias æs='ls'
+alias mjmln='~/source/mjml/packages/mjml/bin/mjml'
+alias clip="xclip -selection c"
+
+
+function rangex() {
+    temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+    ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+    if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+        cd -- "$chosen_dir"
+    fi
+    rm -f -- "$temp_file"
+}
+
+# This binds Ctrl-O to ranger-cd:
+#bind '"\C-o":"ranger-cd\C-m"'
+
+
+function open () {
+    nohup xdg-open "$*" > /dev/null 2>&1
+}
+
+function sagetexc {
+    pdflatex "main.tex" &&
+    sage "main.sagetex.sage" &&
+    pdflatex "main.tex"
+}
 
 function mkdiro() {
     mkdir -p $1;
@@ -128,6 +155,7 @@ export EDITOR=nvim
 #export PYTHONPATH="/usr/lib/python2.7/site-packages"
 
 
+# ssh-agent setup
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
@@ -135,6 +163,6 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
 fi
 
-export PATH=~/.npm-global/bin:$PATH
+#export PATH=~/.npm-global/bin:$PATH
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

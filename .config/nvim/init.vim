@@ -11,14 +11,14 @@ let mapleader = ","
 
 call plug#begin(stdpath('data') . '/plugged')
 " Lanuage client to make gd work across files and much more
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_autoStart = 1
 " set fsharp language server
-let g:LanguageClient_serverCommands = {}
+" let g:LanguageClient_serverCommands = {}
 
 " Polyglot - syntax highlighting for almost everything
 Plug 'sheerun/vim-polyglot'
@@ -78,11 +78,11 @@ let g:vim_jsx_pretty_colorful_config = 1
 Plug 'othree/es.next.syntax.vim'
 
 "snippets
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger = '<c-e>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"Plug 'sirver/ultisnips'
+"Plug 'honza/vim-snippets'
+"let g:UltiSnipsExpandTrigger = '<c-e>'
+"let g:UltiSnipsJumpForwardTrigger = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 "save as root using suda:// protocol (suda://%) (% = current file)
 Plug 'lambdalisue/suda.vim'
@@ -94,12 +94,12 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'fsprojects/fsharp-language-server', {'do': 'npm install && dotnet build -c Release'}
 
 " Omnisharp for completion for C#
-Plug 'OmniSharp/omnisharp-vim'
+"Plug 'OmniSharp/omnisharp-vim'
 " Use the stdio version of OmniSharp-roslyn:
-let g:OmniSharp_server_stdio = 1
+"let g:OmniSharp_server_stdio = 1
 
 " You complete me auto completion
-Plug 'ycm-core/YouCompleteMe' ", { 'do': 'python install.py --rust-completer --cs-completer' }
+"Plug 'ycm-core/YouCompleteMe' ", { 'do': 'python install.py --rust-completer --cs-completer' }
 
 " Deoplete auto completion
 " if has('nvim')
