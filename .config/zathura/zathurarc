@@ -1,0 +1,11 @@
+set selection-clipboard clipboard
+set default-bg "#261515"
+# Girara
+set completion-highlight-bg "#e70038"
+set inputbar-fg "#e70038"
+set statusbar-bg "#261515"
+
+# Zathura
+set highlight-color "#e70038"
+map <C-i> recolor # night mode
+
